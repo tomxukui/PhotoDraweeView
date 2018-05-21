@@ -1,6 +1,7 @@
 package me.relex.photodraweeview.sample.gestures;
 
 import android.view.MotionEvent;
+
 import me.relex.photodraweeview.Attacher;
 import me.relex.photodraweeview.DefaultOnDoubleTapListener;
 
@@ -24,7 +25,8 @@ public class ScaleStepDoubleTapListener extends DefaultOnDoubleTapListener {
         mScaleStep = scaleStep;
     }
 
-    @Override public boolean onDoubleTap(MotionEvent event) {
+    @Override
+    public boolean onDoubleTap(MotionEvent event) {
         if (mAttacher == null) {
             return false;
         }
@@ -47,7 +49,7 @@ public class ScaleStepDoubleTapListener extends DefaultOnDoubleTapListener {
 
             mAttacher.setScale(newScale, x, y, true);
         } catch (Exception e) {
-            // Can sometimes happen when getX() and getY() is called
+            e.printStackTrace();
         }
         return true;
     }

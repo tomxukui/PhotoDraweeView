@@ -1,12 +1,10 @@
-apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
-
-group = 'com.github.tomxukui'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
     defaultConfig {
+        applicationId "me.relex.photodraweeview.sample"
         minSdkVersion rootProject.ext.android.minSdkVersion
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode 200
@@ -22,8 +20,11 @@ android {
 }
 
 dependencies {
-    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
-    compileOnly rootProject.ext.dependencies["support-core-ui"]
-    compileOnly rootProject.ext.dependencies["support-annotations"]
-    compileOnly 'com.facebook.fresco:fresco:1.9.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation rootProject.ext.dependencies["appcompat-v7"]
+    implementation rootProject.ext.dependencies["design"]
+    implementation project(':photodraweeview')
+
+    implementation 'com.facebook.fresco:fresco:1.9.0'
+    implementation 'me.relex:circleindicator:1.2.1'
 }
