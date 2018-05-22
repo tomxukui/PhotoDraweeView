@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <me.relex.photodraweeview.sample.MultiTouchViewPager
+    <me.relex.photodraweeview.MultiTouchViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
